@@ -4,29 +4,65 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f8ff;
-  /* Light blue background */
   font-family: 'Arial', sans-serif;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 204, 204, 0.7));
+    animation: gradientShift 3s ease infinite;
+  position: relative;
 }
 
 .container {
   text-align: center;
   overflow: hidden;
-  /* Prevent overflow */
+}
+
+@keyframes gradientShift {
+  0% {
+    background: #f0f8ff;
+  }
+
+  50% {
+    background: #ffe4e1;
+  }
+
+  100% {
+    background: #f0f8ff;
+  }
 }
 
 .apology-message {
   font-size: 3rem;
   color: #ff4500;
-  /* Red color for the apology message */
 }
 
 .panda-image {
   position: absolute;
-  /* Allow animation to work with absolute positioning */
   width: 200px;
-  /* Set a width for the panda image */
-  margin-top: 20px;
   left: -200px;
-  /* Start position slightly off-screen */
+}
+
+.panda-hang{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+}
+
+.accept-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 18px;
+  transition: background-color 0.3s;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
